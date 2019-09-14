@@ -1,6 +1,6 @@
 package com.example.android.zimad_test.data.entities;
 
-class Model {
+public class Model {
     private String url;
     private String title;
 
