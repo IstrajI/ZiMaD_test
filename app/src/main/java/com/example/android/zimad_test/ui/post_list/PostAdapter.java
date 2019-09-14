@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.zimad_test.R;
 import com.example.android.zimad_test.data.entities.Model;
-import com.example.android.zimad_test.ui.OnPostClickListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

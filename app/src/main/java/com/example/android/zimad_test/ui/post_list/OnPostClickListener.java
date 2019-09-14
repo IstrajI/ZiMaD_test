@@ -1,4 +1,4 @@
-package com.example.android.zimad_test.ui;
+package com.example.android.zimad_test.ui.post_list;
 
 import com.example.android.zimad_test.data.entities.Model;
 
