@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.android.zimad_test.R;
 import com.example.android.zimad_test.data.entities.Model;
 import com.example.android.zimad_test.di.DaggerApplicationComponent;
+import com.example.android.zimad_test.ui.OnPostClickListener;
 
 import java.util.List;
 
@@ -45,6 +46,7 @@ public class PostListFragment extends Fragment implements PostListView{
 
         listRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         postAdapter = new PostAdapter();
+        postAdapter.setOnPostClickListener((OnPostClickListener) getActivity());
         listRecyclerView.setAdapter(postAdapter);
         postListPresenter.setPostListView(this);
 
