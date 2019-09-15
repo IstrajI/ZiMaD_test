@@ -10,13 +10,13 @@ import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.zimad_test.MyApplication;
 import com.example.android.zimad_test.R;
 import com.example.android.zimad_test.data.entities.Model;
-import com.example.android.zimad_test.di.DaggerApplicationComponent;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -43,6 +43,7 @@ public class PostListFragment extends Fragment implements PostListView {
 
         postListPresenter = MyApplication.getComponent().getPostListPresenter();
         return view;
+
     }
 
     @Override
@@ -53,8 +54,9 @@ public class PostListFragment extends Fragment implements PostListView {
         postAdapter = new PostAdapter();
         postAdapter.setOnPostClickListener((OnPostClickListener) getActivity());
         listRecyclerView.setAdapter(postAdapter);
-        postListPresenter.setPostListView(this);
 
+        postListPresenter.setPostListView(this);
+        postListPresenter.setViewModel(ViewModelProviders.of(this).get(PostListViewModel.class));
         postListPresenter.loadPosts(getArguments().getInt(LIST_MODE_KEY, 0));
     }
 
@@ -65,7 +67,7 @@ public class PostListFragment extends Fragment implements PostListView {
 
     @Override
     public void showError(final String errorMsg) {
-        Toast.makeText(getActivity(), errorMsg, Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(), "Turn On Wi-fi", Toast.LENGTH_LONG).show();
     }
 
     private final static String LIST_MODE_KEY = "LIST_MODE_KEY";
