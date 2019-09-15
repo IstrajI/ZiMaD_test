@@ -44,6 +44,4 @@ public class ListPagerAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return postLists.size();
     }
-
-
 }

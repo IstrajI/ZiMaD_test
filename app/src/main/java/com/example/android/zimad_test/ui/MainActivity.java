@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements OnPostClickListen
     }
 
     @Override
-    public void onPostClicked(final Model model) {
-        PostDetailsActivity.startDetailsFragmentInstance(this, model.getUrl(), 0, model.getTitle());
+    public void onPostClicked(final Model model, final int position) {
+        PostDetailsActivity.startDetailsFragmentInstance(this, model.getUrl(), position, model.getTitle());
     }
 }

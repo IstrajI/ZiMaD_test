@@ -70,7 +70,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         @Override
         public void onClick(final View view) {
             if (onClickListener != null) {
-                onClickListener.onPostClicked(items.get(getAdapterPosition()));
+                onClickListener.onPostClicked(items.get(getAdapterPosition()), getAdapterPosition());
             }
         }
     }
